@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
     s.platform          = :ios
     s.source            = { :git => 'https://github.com/Kandy-IO/kandy-ios-webrtc.git', :tag => '0.72'}
     s.ios.deployment_target = '9.0'
-    s.ios.vendored_frameworks = 'WebRTC.framework'
+    s.vendored_frameworks = 'WebRTC.framework'
 
 end
