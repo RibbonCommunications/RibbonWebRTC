@@ -60,7 +60,6 @@
 #import <WebRTC/RTCMediaConstraints.h>
 #import <WebRTC/RTCMediaSource.h>
 #import <WebRTC/RTCMediaStream.h>
-#import <WebRTC/RTCMediaStream+Interface.h>
 #import <WebRTC/RTCMediaStreamTrack.h>
 #import <WebRTC/RTCMetrics.h>
 #import <WebRTC/RTCMetricsSampleInfo.h>
