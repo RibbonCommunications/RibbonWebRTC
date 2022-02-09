@@ -11,8 +11,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
 
-#import "RTCMacros.h"
-#import "RTCVideoCapturer.h"
+#import <WebRTC/RTCMacros.h>
+#import <WebRTC/RTCVideoCapturer.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,7 +40,7 @@ NS_EXTENSION_UNAVAILABLE_IOS("Camera not available in app extensions.")
 - (void)startCaptureWithDevice:(AVCaptureDevice *)device
                         format:(AVCaptureDeviceFormat *)format
                            fps:(NSInteger)fps
-             completionHandler:(nullable void (^)(NSError *))completionHandler;
+             completionHandler:(nullable void (^)(NSError *_Nullable))completionHandler;
 // Stops the capture session asynchronously and notifies callback on completion.
 - (void)stopCaptureWithCompletionHandler:(nullable void (^)(void))completionHandler;
 
@@ -52,15 +52,15 @@ NS_EXTENSION_UNAVAILABLE_IOS("Camera not available in app extensions.")
 - (void)stopCapture;
 
 /**
-* Calling this function will prevent WebRTC to automatically 
-* orient the video frame with listening device orientation notifications. 
+* Calling this function will prevent WebRTC to automatically
+* orient the video frame with listening device orientation notifications.
 * @param prevent if YES, automatic orientation will be disabled
 * @since patched after M65 03/2018 - New Patch M72 02/2019
 */
 - (void)preventOrientation:(BOOL)shouldPrevent;
 
 /**
-* Calling this function rotates the video frame to the specified 
+* Calling this function rotates the video frame to the specified
 * orientation position.
 * @param orientation the orientation position to set video frame
 * @since patched after M65 03/2018 - Net Patch M72 02/2019
