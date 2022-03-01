@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name              = 'KandyWebRTC'
-    s.version           = '0.85.1'
+    s.version           = '0.97.0'
     s.summary           = 'KandyWebRTC Framework'
     s.homepage          = 'https://github.com/Kandy-IO/kandy-ios-webrtc'
     s.author            = { 'Name' => 'cpaassdk@netas.com.tr' }
