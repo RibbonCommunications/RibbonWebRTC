@@ -11,10 +11,10 @@ let package = Package(
     products: [
         .library(
             name: "WebRTC",
-            targets: ["WebRTCFramework"]),
+            targets: ["WebRTC"]),
     ],
     targets: [
-        .binaryTarget(name: "WebRTCFramework",
+        .binaryTarget(name: "WebRTC",
                       path: "WebRTC.xcframework"),
     ]
 )
