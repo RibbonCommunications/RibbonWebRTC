@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
     s.homepage          = 'https://github.com/RibbonCommunications/RibbonWebRTC'
     s.author            = { 'Name' => 'dpd-tur.MobileSDK@orioninc.com' }
     s.platform          = :ios
-    s.source            = { :git => 'https://github.com/RibbonCommunications/RibbonWebRTC.git'}
+    s.source            = { :git => 'https://github.com/RibbonCommunications/RibbonWebRTC.git', :tag => s.version}
     s.ios.deployment_target = '11.0'
     s.vendored_frameworks = 'WebRTC.xcframework'
 
