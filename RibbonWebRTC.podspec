@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name              = 'RibbonWebRTC'
-    s.version           = '0.97.1'
+    s.version           = '0.110.0'
     s.license 	       = 'MIT'
     s.summary           = 'RibbonWebRTC Framework'
     s.homepage          = 'https://github.com/RibbonCommunications/RibbonWebRTC'
