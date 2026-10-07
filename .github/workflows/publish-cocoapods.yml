@@ -1,0 +1,38 @@
+name: Publish WebRTC to CocoaPods
+
+on:
+  push:
+    tags:
+      - '0.*'
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1.0'
+      - name: Install CocoaPods
+        run: gem install cocoapods --no-document
+      - name: Verify release and publish
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          if [ -z "$COCOAPODS_TRUNK_TOKEN" ]; then
+            echo "::error::Configure COCOAPODS_TRUNK_TOKEN for the RibbonWebRTC repository."
+            exit 1
+          fi
+          version=$(pod ipc spec RibbonWebRTC.podspec | ruby -rjson -e 'puts JSON.parse(STDIN.read).fetch("version")')
+          if [ "$GITHUB_REF_NAME" != "$version" ]; then
+            echo "::error::The release tag must match the podspec version."
+            exit 1
+          fi
+          pod trunk me > /dev/null
+          pod trunk push RibbonWebRTC.podspec --allow-warnings
